@@ -3,7 +3,6 @@ Element.prototype.appendAfter = function(element) {
     element.parentNode.insertBefore(this, element.nextSibling)
 }
 
-
 function noop() {}
 
 function _createModalFooter(buttons= []) {
@@ -76,6 +75,7 @@ $.modal = function(params) {
     const modalClickListener = event => {
         const target = event.target
         if (target.dataset.close) {
+            closeHandler()
             modal.close()
         }
     }
