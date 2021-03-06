@@ -157,7 +157,8 @@ const modal = $.modal({
                 closeHandler()
             },
         },
-    ]
+    ],
+    width: '300px',
 })
 
 const showBoardLine = (top=0, left=-0.1, angle=0) => {
@@ -269,6 +270,18 @@ const boardClickHandler = e => {
                 modal.setContent(`<h3 class="modal__title">Победили ${(symbol === '0') ? 'Крестики': 'Нолики'}</h3>`)
                 modal.open()
 
+            } else {
+                const boardSymbols = document.querySelectorAll('.board__symbol')
+                let k = 0
+                boardSymbols.forEach(el => {
+                    if (!el.closest('.board__section').classList.contains('board__selection_active')) {
+                        k += 1
+                    }
+                })
+                if (k === 0) {
+                    modal.setContent(`<h3 class="modal__title">Ничья</h3>`)
+                    modal.open()
+                }
             }
         }
     }

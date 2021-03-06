@@ -303,7 +303,7 @@ body {
 }
 
 .modal__window {
-  width: 600px;
+  width: 300px;
   border-radius: 5px;
   background-color: #fff;
   margin: auto;
@@ -355,4 +355,6 @@ button {
   font-size: 24px;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   border-radius: 10px;
+  background-color: #eaeaea;
+  border: 1px solid #c6c6c6;
 }
